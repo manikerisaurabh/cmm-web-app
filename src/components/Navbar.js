@@ -99,8 +99,9 @@ export default function PrimarySearchAppBar(props) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Customer</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Partner</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Blog</MenuItem>
     </Menu>
   );
 
@@ -122,24 +123,13 @@ export default function PrimarySearchAppBar(props) {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+      <p>Customer</p>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+      <p>Partner</p>
+      </MenuItem>
+      <MenuItem>
+      <p>Blog</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -208,7 +198,7 @@ export default function PrimarySearchAppBar(props) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{height:"96px",justifyContent:"center"}}>
         <Toolbar>
-        <IconButton
+        {/* <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
@@ -216,7 +206,7 @@ export default function PrimarySearchAppBar(props) {
             sx={{ mr: 2}}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Box sx={{ objectFit:"cover" }}>
           <Image src="/images/logo.png"  fill objectFit='contain' className="images" sx={{ display: { xs: 'none', sm: 'block' }}}/>
           </Box>
@@ -231,7 +221,7 @@ export default function PrimarySearchAppBar(props) {
             />
           </Search> */}
           <Box sx={{ flexGrow: 1 }} />
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', md: 'block' } }}>
           <Button variant="outlined" sx={{color:"#fff"}} endIcon={<CallMadeIcon  />} >Customer</Button>
           <Button variant="outlined" sx={{color:"#fff"}} endIcon={<CallMadeIcon  />} >Partner</Button>
           <Button variant="outlined" sx={{color:"#fff"}} endIcon={<CallMadeIcon  />} >Blog</Button>
