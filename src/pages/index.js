@@ -10,6 +10,8 @@ import Delivery from "@/components/Home/Delivery";
 import Testimonials from "@/components/Home/Testimonials";
 import SocialMedia from "@/components/Home/SocialMedia";
 import Hero from "@/components/Home/Hero";
+import Image from "next/image";
+import { Height } from "@mui/icons-material";
 
 // Home Page with Slider and Sections
 export default function HomePage() {
@@ -33,9 +35,23 @@ export default function HomePage() {
     <>
       <Hero />
       <Welcome />
-      <Categories />
-      <HowToShop />
-      <Delivery />
+      <Box sx={{ position: "relative" }}>
+        <Image
+          src="/images/welcome/roundbg.png" // Replace with your image URL
+          alt="Hero Background"
+          layout="fill"
+          objectFit="cover"
+          className="secondbg"
+          sx={{
+            position: "absolute",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <Categories />
+        <HowToShop />
+        <Delivery />
+      </Box>
       <Testimonials />
       <SocialMedia />
     </>

@@ -43,10 +43,51 @@ a {
 
 
 .images {
-
   object-fit: contain;
   width: 100% !important;
   position: relative !important;
   height: unset !important;
   max-width: 145px;
+}
+.DownloadButtonArrow{
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+  max-width: 84px;
+  margin-top: 10px;
+}
+.NextImage{
+  position: relative !important;
+  width: 100% !important;
+  height: unset;
+}
+.secondbg{
+  width: unset !important;
+  height: 100% !important;
+  opacity: 0.6;
+  z-index: -1;
+}
+.deliveryCardBg{
+  width: 100% !important;
+  height: unset !important;
+}
+.deliveryCard{
+  /* width: 100% !important; */
+
+  top: 100px !important;
+}
+.categoriesImage{
+  position: relative !important;
+
+  width: 100% !important;
+  height: unset !important;
+}
+.swiper-slide-next{
+  z-index: 1 !important;
+  /* margin-left: -70px;
+  margin-right: -70px; */
+}
+.swiper-slide{
+  z-index: 0;
 }

@@ -1,76 +1,83 @@
-import { Box, Typography, Card, CardContent, Container } from "@mui/material"
-import StarIcon from "@mui/icons-material/Star"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import React from "react";
+import { Box, Typography, Card, CardContent, Container } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const testimonials = [
   {
-    content: "Great service and fast delivery! The app is very user-friendly and the products are high quality.",
-    bgColor: "#FFF0F5",
+    text: `"I love how City Center Mall connects small businesses with customers. As a seller, I've gained great exposure and reached more buyers than ever. Their platform is easy to use, and their team is always supportive."`,
+    author: "Rohan Mehta",
+    bgColor: "#FFCDD2",
   },
   {
-    content:
-      "I love how convenient it is to shop from home. The delivery is always on time and the staff is very professional.",
-    bgColor: "#FFFACD",
+    text: `"City Center Mall made my shopping so much easier! I found everything I needed in one place, from home essentials to trendy outfits. The online shopping experience was smooth, and the delivery was super fast!"`,
+    author: "Aditi Sharma",
+    bgColor: "#FFF9C4",
   },
   {
-    content: "Amazing selection of products and competitive prices. Will definitely continue shopping here!",
-    bgColor: "#E6E6FA",
+    text: `"Great prices, amazing product range, and excellent customer service! Whether I visit the store or shop online, I always have a seamless shopping experience. Highly recommended!"`,
+    author: "Sneha Verma",
+    bgColor: "#E1BEE7",
   },
-]
+  {
+    text: `"Great prices, amazing product range, and excellent customer service! Whether I visit the store or shop online, I always have a seamless shopping experience. Highly recommended!"`,
+    author: "Sneha Verma",
+    bgColor: "#E1BEE7",
+  },
+];
 
 export default function Testimonials() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  }
-
   return (
-    <Box sx={{ py: 8 }}>
       <Container maxWidth="lg">
-        <Typography variant="h4" component="h2" fontWeight="bold" gutterBottom>
-          Testimonials
-        </Typography>
-        <Slider {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <Box key={index} sx={{ p: 1 }}>
-              <Card sx={{ height: "100%", backgroundColor: testimonial.bgColor }}>
-                <CardContent>
-                  <Box sx={{ display: "flex", mb: 2 }}>
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} sx={{ color: "gold" }} />
-                    ))}
-                  </Box>
-                  <Typography variant="body2" color="text.secondary">
-                    {testimonial.content}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Box>
-          ))}
-        </Slider>
-      </Container>
+    <Box sx={{ py: 5, textAlign: "center" }}>
+      <Typography variant="h4" gutterBottom>
+        Testimonials
+      </Typography>
+      <Swiper
+        modules={[Pagination]}
+        // slidesPerView={3}
+        spaceBetween={0}
+        // centeredSlides
+        // lazy={true}
+        pagination={{ clickable: true }}
+        breakpoints={{
+          512: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        style={{ paddingBottom: "40px" }}
+      >
+        {testimonials.map((item, index) => (
+          <SwiperSlide key={index}>
+            <Card
+              sx={{
+                backgroundColor: item.bgColor,
+                borderRadius: "20px",
+                boxShadow: 3,
+                px: 3,
+                py: 4,
+                mx: 2,
+                position: "relative",
+              }}
+            >
+              <CardContent>
+                <Typography variant="h6" sx={{ color: "#FFC107", fontSize: "24px", mb: 1 }}>
+                  ⭐⭐⭐⭐⭐
+                </Typography>
+                <Typography variant="body1" sx={{ fontSize: "1rem" }}>
+                  {item.text}
+                </Typography>
+                <Typography variant="subtitle1" sx={{ fontWeight: 600, mt: 2 }}>
+                  — {item.author}
+                </Typography>
+              </CardContent>
+            </Card>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Box>
-  )
+    </Container>
+  );
 }
-

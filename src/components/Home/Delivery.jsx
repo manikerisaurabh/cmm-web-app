@@ -1,54 +1,132 @@
-import { Box, Typography, Grid, Card, CardContent, Container } from "@mui/material"
-import Image from "next/image"
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
+// import { Box, Typography, Grid, Card, CardContent, Container } from "@mui/material"
+// import Image from "next/image"
+// import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
+
+// const deliveryOptions = [
+//   { title: "Quick", image: "/images/Delivery/Quick.png" },
+//   { title: "Self-Pickup", image: "/images/Delivery/SelfPickup.png" },
+//   { title: "Scheduled", image: "/images/Delivery/Scheduled.png" },
+// ]
+
+// export default function Delivery() {
+//   return (
+//     <Box sx={{ py: 8 }}>
+//       <Container maxWidth="lg">
+//         <Typography variant="h4" component="h2" fontWeight="bold" gutterBottom>
+//           Delivery
+//         </Typography>
+//         <Grid container spacing={3}>
+//           {deliveryOptions.map((option) => (
+//            <Grid item xs={12}  md={4} key={option.title} >
+//               <Box
+//                 sx={{
+//                   position:"relative",
+//                   height: "100%",
+//                   display: "flex",
+//                   flexDirection: "column",
+//                   borderRadius:"20px",
+//                   transition: "0.3s",
+//                   "&:hover": { boxShadow: 6 },
+//                 }}
+//               >
+//                 <Image
+//                         src="/images/Delivery/bgCard.png" // Replace with your image URL
+//                         alt="Hero Background"
+//                         layout="fill"
+//                         objectFit="contain"
+//                         className="deliveryCardBg"
+//                       />
+//                   <Box sx={{ height: 250, position: "relative", mb: 2 }}>
+//                     <Image
+//                       src={option.image || "/placeholder.svg"}
+//                       alt={option.title}
+//                       fill
+//                       style={{ objectFit: "contain"}}
+//                     />
+//               <Box >
+//                     <Typography variant="h6" component="h3" color="primary">
+//                       {option.title}
+//                     </Typography>
+//                     <ArrowForwardIcon color="primary" />
+//                   </Box>
+//               </Box>
+//                   </Box>
+                  
+//             </Grid>
+//           ))}
+//         </Grid>
+//       </Container>
+//     </Box>
+//   )
+// }
+
+import React from "react";
+import Image from "next/image";
+import { Box, Typography, Grid, Button, Container } from "@mui/material";
+import CallMadeOutlinedIcon from '@mui/icons-material/CallMadeOutlined';
 
 const deliveryOptions = [
-  { title: "Quick", image: "/placeholder.svg?height=192&width=192" },
-  { title: "Self-Pickup", image: "/placeholder.svg?height=192&width=192" },
-  { title: "Scheduled", image: "/placeholder.svg?height=192&width=192" },
-]
+  { title: "Quick", image: "/images/Delivery/Quick.png" },
+  { title: "Self-Pickup", image: "/images/Delivery/SelfPickup.png" },
+  { title: "Scheduled", image: "/images/Delivery/Scheduled.png" },
+];
 
-export default function Delivery() {
+export default function DeliverySection() {
   return (
-    <Box sx={{ py: 8, background: "linear-gradient(to bottom right, #FFF0F5, #E6E6FA)" }}>
+    <Box sx={{ py: 8 }}>
       <Container maxWidth="lg">
-        <Typography variant="h4" component="h2" fontWeight="bold" gutterBottom>
-          Delivery
-        </Typography>
-        <Grid container spacing={3}>
-          {deliveryOptions.map((option) => (
-            <Grid item xs={12} md={4} key={option.title}>
-              <Card
-                sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  transition: "0.3s",
-                  "&:hover": { boxShadow: 6 },
-                }}
-              >
-                <CardContent>
-                  <Box sx={{ height: 192, position: "relative", mb: 2 }}>
-                    <Image
-                      src={option.image || "/placeholder.svg"}
-                      alt={option.title}
-                      fill
-                      style={{ objectFit: "contain" }}
-                    />
-                  </Box>
-                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <Typography variant="h6" component="h3">
-                      {option.title}
-                    </Typography>
-                    <ArrowForwardIcon color="primary" />
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+    <Box sx={{ py: 5 }}>
+      <Typography variant="h4" component="h2" fontWeight="bold" gutterBottom>
+        Delivery
+      </Typography>
+      <Grid container spacing={3} justifyContent="center">
+        {deliveryOptions.map((option, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                backgroundImage:"url(/images/Delivery/bgCard.png)",
+                backgroundSize:"contain",
+                height: 300,
+                borderRadius: 3,
+                // overflow: "hidden",
+                boxShadow: 3,
+              }}
+            >
+               {/* <Image
+                        src="/images/Delivery/bgCard.png" // Replace with your image URL
+                        alt="Hero Background"
+                        layout="fill"
+                        objectFit="contain"
+                        className="deliveryCardBg"
+                      /> */}
+              <Image src={option.image} className="deliveryCard" alt={option.title} layout="fill" objectFit="contain" />
+            </Box>
+            <Box sx={{mt:20,alignItems:"center",display:"flex"}} >
+            <Button
+              variant="outlined"
+              size="large"
+              sx={{
+                mr: 3,
+                borderRadius: 5,
+                fontSize: "1rem",
+                fontWeight: 500,
+                color: "primary.main",
+                width:"100%",
+                borderColor: "primary.main",
+                px: 10,
+              }}
+            >
+              {option.title}
+            </Button>
+            <CallMadeOutlinedIcon color="primary"  sx={{ border:"1px solid #6C6AED",borderRadius:"20px",fontSize:"43px",zIndex:1}} />
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
     </Box>
-  )
+    </Container>
+    </Box>
+  );
 }
-
