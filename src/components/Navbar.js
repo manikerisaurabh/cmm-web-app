@@ -18,6 +18,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button, Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Stack } from '@mui/material';
 import Image from 'next/image';
 import CallMadeIcon from '@mui/icons-material/CallMade';
+import { useRouter } from 'next/router';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -60,8 +61,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const router = useRouter()
 
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false) // This should be managed by your auth state
+  const handleLogout = () => {
+    setIsLoggedIn(false)
+    handleClose()
+    // Add your logout logic here
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -99,9 +113,8 @@ export default function PrimarySearchAppBar(props) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Customer</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Partner</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Blog</MenuItem>
+      <MenuItem onClick={handleMenuClose}>View</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
     </Menu>
   );
 
@@ -131,7 +144,7 @@ export default function PrimarySearchAppBar(props) {
       <MenuItem>
       <p>Blog</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      {/* <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -142,7 +155,7 @@ export default function PrimarySearchAppBar(props) {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
-      </MenuItem>
+      </MenuItem> */}
     </Menu>
   );
   const drawerWidth = 240;
@@ -226,6 +239,19 @@ export default function PrimarySearchAppBar(props) {
           <Button variant="outlined" sx={{color:"#fff"}} endIcon={<CallMadeIcon  />} >Partner</Button>
           <Button variant="outlined" sx={{color:"#fff"}} endIcon={<CallMadeIcon  />} >Blog</Button>
           </Stack>
+          {/* {isLoggedIn ? (
+            <>
+              <Avatar sx={{ ml: 2, cursor: "pointer" }} onClick={handleMenu} />
+              <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+                <MenuItem onClick={() => router.push("/profile")}>Profile</MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              </Menu>
+            </>
+          ) : (
+            <Button color="inherit" sx={{ textTransform: "none", ml: 2 }} onClick={() => router.push("/login")}>
+              Login
+            </Button>
+          )} */}
           
           {/* <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">

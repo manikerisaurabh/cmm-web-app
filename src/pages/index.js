@@ -52,8 +52,17 @@ export default function HomePage() {
         <HowToShop />
         <Delivery />
       </Box>
+      <Box sx={{ position: "relative" }}>
+        <Image
+          src="/images/welcome/roundbglast.png" // Replace with your image URL
+          alt="Hero Background 2"
+          layout="fill"
+          objectFit="contain"
+          className="thirdbg"
+        />
       <Testimonials />
       <SocialMedia />
+      </Box>
     </>
   );
 }

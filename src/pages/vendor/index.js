@@ -1,42 +1,51 @@
 import React from "react";
-import { Container, Grid, Card, CardContent, Typography, Button } from "@mui/material";
+import { Container, Grid, Card, CardContent, Typography, Button, Box } from "@mui/material";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Welcome from "@/components/Vendor/Welcome";
+import Categories from "@/components/Vendor/Categories";
+import HowToShop from "@/components/Home/HowToShop";
+import Delivery from "@/components/Home/Delivery";
+import Testimonials from "@/components/Home/Testimonials";
+import SocialMedia from "@/components/Home/SocialMedia";
+import Image from "next/image";
+import VendorHero from "@/components/Vendor/Hero";
 
+// Home Page with Slider and Sections
+export default function Vendor() {
 
-// Vendor Dashboard
-export default function VendorDashboard() {
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>Vendor Dashboard</Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6">Manage Products</Typography>
-              <Typography variant="body2">Add, edit, and remove your products.</Typography>
-              <Button variant="contained" color="primary" sx={{ mt: 2 }}>Manage Products</Button>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6">Manage Orders</Typography>
-              <Typography variant="body2">Track your store's incoming orders.</Typography>
-              <Button variant="contained" color="primary" sx={{ mt: 2 }}>View Orders</Button>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6">Store Settings</Typography>
-              <Typography variant="body2">Update store details and delivery settings.</Typography>
-              <Button variant="contained" color="primary" sx={{ mt: 2 }}>Settings</Button>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-    </Container>
+    <>
+      <VendorHero />
+      <Welcome />
+      <Box sx={{ position: "relative" }}>
+        <Image
+          src="/images/welcome/roundbg.png" // Replace with your image URL
+          alt="Hero Background"
+          layout="fill"
+          objectFit="cover"
+          className="secondbg"
+          sx={{
+            position: "absolute",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <Categories />
+        <HowToShop />
+        <Delivery />
+      </Box>
+      <Box sx={{ position: "relative" }}>
+        <Image
+          src="/images/welcome/roundbglast.png" // Replace with your image URL
+          alt="Hero Background 2"
+          layout="fill"
+          objectFit="contain"
+          className="thirdbg"
+        />
+      <Testimonials />
+      <SocialMedia />
+      </Box>
+    </>
   );
 }
-

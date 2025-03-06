@@ -3,11 +3,11 @@ import Image from "next/image"
 import GooglePlayIcon from "@mui/icons-material/Google"
 import AppleIcon from "@mui/icons-material/Apple"
 
-export default function Hero() {
+export default function VendorHero() {
   return (
     <Box
       sx={{
-        background: "#FFF9DB",
+        background: "#E2C0FE",
         py: { xs: 6, md: 12 },
         position: "relative",
         width: "100%",
@@ -19,21 +19,11 @@ export default function Hero() {
       }}
     >
       <Image
-        src="/images/home/herobg.png" // Replace with your image URL
+        src="/images/Vendor/banner.png" // Replace with your image URL
         alt="Hero Background"
         layout="fill"
+        className="width-unset"
         objectFit="cover"
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.5, // Adjust for blending effect
-          zIndex: 1,
-        }}
-        // className="absolute top-0 left-0 w-full h-full mix-blend-multiply"
       />
       <Container maxWidth="lg" sx={{
         zIndex: 2
@@ -51,7 +41,7 @@ export default function Hero() {
               City Center Mall, India's top B2C platform!
             </Typography>
             <Box sx={{ mt: 4, display: "flex", flexDirection: {  xs: "row" }, gap: 2 }}>
-              <Button variant="outlined" size="large" sx={{ border: "1px solid #6C6AED", fontSize:{ xs:"1rem",sm:"1.5rem"}, mt: "10px", py:{ xs:"15px",sm:"20px"},px:{ xs:"60px",sm:"100px"} }}>Download It</Button>
+              <Button variant="outlined" size="large" sx={{ border: "1px solid #6C6AED", fontSize:{ xs:"1rem",sm:"1.5rem"}, mt: "10px", py:{ xs:"15px",sm:"20px"},width:"100%" }}>Resister Now Your Shop </Button>
               <Image
                 src="/images/home/ArrowButton.png" // Replace with your image URL
                 alt="Hero Background"
@@ -84,7 +74,7 @@ export default function Hero() {
           <Grid item xs={12} md={6}>
             <Box sx={{ position: "relative", height: { xs: "500px", md: "500px" } }}>
             <Image
-                src="/images/home/mobileback.png"
+                src="/images/Vendor/mobileBack.png"
                 alt="App Preview"
                 fill
                 style={{ objectFit: "contain" }}
