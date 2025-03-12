@@ -25,12 +25,12 @@ export default function Footer() {
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <PhoneIcon sx={{ mr: 1 }} />
-              <Typography variant="body2">+1 234 567 8900</Typography>
+              <Typography variant="body2">+91 705 709 7790</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={{ height: 200, position: "relative", borderRadius: 2, overflow: "hidden" }}>
-              <Image src="/placeholder.svg?height=200&width=400" alt="Map" fill style={{ objectFit: "cover" }} />
+              <Image src="/images/Footer/map.jpeg" alt="Map" fill style={{ objectFit: "cover" }} />
             </Box>
           </Grid>
         </Grid>
