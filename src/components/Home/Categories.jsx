@@ -1,7 +1,9 @@
 import { Box, Typography, Grid, Card, CardContent, Container, Button } from "@mui/material"
 import Image from "next/image"
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import CallMadeOutlinedIcon from '@mui/icons-material/CallMadeOutlined';
+
+import Link from "next/link";
 const categories = [
   { title: "Appliances & Electronics", image: "/images/Category/Electronics.png" },
   { title: "Automotive", image: "/images/Category/Automotive.png" },
@@ -15,13 +17,15 @@ export default function Categories() {
   return (
     <Box sx={{ py: 8,zIndex:1 }}>
       <Container maxWidth="lg">
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4 }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4,zIndex:2,position:"relative" }}>
           <Typography variant="h4" component="h2" fontWeight="bold">
             Category
           </Typography>
+          <Link href="/categories">
           <Typography variant="body2" color="text.secondary">
-            see all →
-          </Typography>
+              See all <NavigateNextIcon fontSize="small" sx={{ml:4}} />
+              </Typography>
+            </Link>
         </Box>
         <Grid container spacing={10}>
           {categories.map((category) => (
