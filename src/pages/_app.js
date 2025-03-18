@@ -6,6 +6,7 @@ import { Container } from "@mui/material";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Poppins } from "next/font/google"; // Import Poppins from Next.js
+import SEO from "@/components/SEO";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"], // Choose required weights
@@ -45,6 +46,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <main className={poppins.className}>
     <SessionProvider session={pageProps.session}>
+    <SEO
+        title="City Center Mall "
+        description="City Center Mall"
+        image="https://www.citycentermall.com/og-image.jpeg"
+        url="https://www.citycentermall.com/"
+      />
       <ThemeProvider theme={theme}>
       <Navbar />
       {/* <Sidebar /> */}
