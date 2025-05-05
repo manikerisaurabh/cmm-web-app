@@ -19,7 +19,7 @@ export function SubcategoryCard({ subcategory }) {
                 {subcategory.description}
               </Typography>
               <Box sx={{ height: 128, position: "relative" }}>
-                <Image
+                <img
                   src={subcategory.image || "/placeholder.svg"}
                   alt={subcategory.name}
                   fill
@@ -27,7 +27,6 @@ export function SubcategoryCard({ subcategory }) {
                 />
               </Box>
             </Box>
-            <ArrowForwardIcon sx={{ color: "#6B5DE9", transition: "transform 0.3s", '&:hover': { transform: "translateX(4px)" } }} />
           </Box>
         </CardActionArea>
       </Card>

@@ -57,19 +57,19 @@ export default function CategorySelection({ categories, onSelect }) {
                 <Box display="flex" justifyContent="space-between" alignItems="flex-start">
                   <Box>
                     <Typography variant="h6" component="div">
-                      {category.name}
+                      {category.category}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       {category.description}
                     </Typography>
                   </Box>
-                  <ArrowForward
+                  {/* <ArrowForward
                     color="primary"
                     sx={{
                       transition: "transform 0.2s",
                       transform: hoveredId === category.id ? "translateX(4px)" : "none",
                     }}
-                  />
+                  /> */}
                 </Box>
               </CardContent>
             </Card>

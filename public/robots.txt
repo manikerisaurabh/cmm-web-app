@@ -1,5 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://www.citycentermall.com/sitemap.xml
+# Host
+Host: https://www.citycentermall.com
 
+# Sitemaps
+Sitemap: https://www.citycentermall.com/sitemap.xml

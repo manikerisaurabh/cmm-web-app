@@ -83,13 +83,13 @@ export default function SubcategorySelection({ subcategories, onSelect, onBack, 
                       {subcategory.description}
                     </Typography>
                   </Box>
-                  <ArrowForward
+                  {/* <ArrowForward
                     color="primary"
                     sx={{
                       transition: "transform 0.2s",
                       transform: hoveredId === subcategory.id ? "translateX(4px)" : "none",
                     }}
-                  />
+                  /> */}
                 </Box>
               </CardContent>
             </Card>
