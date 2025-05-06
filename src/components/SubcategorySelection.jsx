@@ -37,13 +37,44 @@ export default function SubcategorySelection({ subcategories, onSelect, onBack, 
               e.preventDefault()
               onBack()
             }}
+            sx={{
+              fontSize: {
+                xs: '0.75rem',
+                sm: '0.875rem',
+                md: '1rem',
+              },
+            }}
           >
             Categories
           </Link>
-          <Typography color="text.primary">{category?.name || "Subcategories"}</Typography>
+          <Typography
+            sx={{
+              fontSize: {
+                xs: '0.75rem',
+                sm: '0.875rem',
+                md: '1rem',
+              },
+            }}
+            color="text.primary">{category?.name || "Subcategories"}</Typography>
         </Breadcrumbs>
 
-        <Button startIcon={<ArrowBack />} onClick={onBack} variant="outlined">
+        <Button startIcon={<ArrowBack sx={{
+          fontSize: {
+            xs: '0.75rem',
+            sm: '0.875rem',
+            md: '1rem',
+          },
+        }} />} onClick={onBack}
+
+          variant="outlined"
+          sx={{
+            fontSize: {
+              xs: '0.75rem',
+              sm: '0.875rem',
+              md: '1rem',
+            },
+          }}
+        >
           Back to Categories
         </Button>
       </Box>

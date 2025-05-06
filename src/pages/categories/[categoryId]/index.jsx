@@ -46,8 +46,20 @@ export default function CategoryPage({ categoryId, categoryInfo }) {
           </Typography>
         </Box>
         <Link href="/categories" passHref>
-          <Button variant="outlined">Back to Categories</Button>
+          <Button
+            variant="outlined"
+            sx={{
+              fontSize: {
+                xs: '0.75rem',  // small text on mobile
+                sm: '0.875rem', // slightly larger on small tablets
+                md: '1rem',     // normal on medium devices and up
+              },
+            }}
+          >
+            Back to Categories
+          </Button>
         </Link>
+
       </Box>
 
       <Typography variant="h5" fontWeight={600} mb={3}>
