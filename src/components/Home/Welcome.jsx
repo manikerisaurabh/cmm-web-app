@@ -37,8 +37,15 @@ export default function Welcome() {
             },
           }}
         >
-          We connect both new and experienced sellers to consumers. From home appliances to trendy clothing and the latest electronics, we offer everything at affordable prices to simplify your shopping experience! You can shop with us in two ways. You can visit our store to see the gadgets in person, and our friendly staff will be there to help you. If you prefer to shop online, you can find our products on popular websites like Amazon and Flipkart, or you can buy directly from our website, making it easy for you to browse and shop from anywhere.
-        </Typography>
+          **Welcome to City Center Mall – Pune’s Top Fast Delivery Shopping App**
+
+          At **City Center Mall**, we are proud to be one of **Pune’s most trusted and fastest-growing online shopping platforms**. Whether you prefer to shop online from the comfort of your home or visit our physical store in Kasba Peth, we ensure a smooth, fast, and reliable shopping experience every time.
+
+          Our **hybrid shopping model** bridges the gap between **traditional retail** and **modern eCommerce**, making it easy for customers to buy what they need — anytime, anywhere. We connect both new and experienced sellers to buyers, offering a wide range of quality products under one roof.
+
+          Need something urgently? Whether it’s a **kitchen appliance**, a **last-minute gift**, or your **weekly grocery order**, we’ll deliver it to your doorstep in just **60 minutes** with our **express delivery service in Pune**. Plus, our easy-to-use shopping app makes browsing, searching, and buying hassle-free.
+
+          Discover the future of **online shopping in Pune** with City Center Mall — where **fast delivery**, **great deals**, and **top products** come together to give you the best shopping experience        </Typography>
 
       </Container>
     </Box>

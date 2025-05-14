@@ -2,6 +2,7 @@ import { Box, Typography, Button, Container, Grid } from "@mui/material";
 import Image from "next/image";
 import GooglePlayIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
+import { Bolt } from "@mui/icons-material";
 
 export default function Hero() {
   return (
@@ -77,8 +78,12 @@ export default function Hero() {
             >
               Welcome to
               <br />
-              City Center Mall, India's top B2C platform!
+              City Center Mall - Top Fast{" "}
+              <Box component="span" fontWeight="bold">
+                60-minute delivery app in Pune
+              </Box>
             </Typography>
+
 
             {/* (Optional) CTA Buttons can go here */}
             {/* <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
