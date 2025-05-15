@@ -78,10 +78,10 @@ export default function Hero() {
             >
               Welcome to
               <br />
-              City Center Mall - Top Fast{" "}
-              <Box component="span" fontWeight="bold">
-                60-minute delivery app in Pune
-              </Box>
+              City Center Mall, India's top B2C platform!
+              {/* <Box component="span" fontWeight="bold">
+                60 minute delivery app in Pune
+              </Box> */}
             </Typography>
 
 
